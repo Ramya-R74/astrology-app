@@ -115,6 +115,8 @@ const predictions = [
   "You'll become a respected leader",
 ];
 
+const loadingContainer = document.getElementById('loadingContainer');
+
 // selecting form element
 const form = document.querySelector('#zodiacForm');
 
@@ -122,6 +124,10 @@ const form = document.querySelector('#zodiacForm');
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   // console.log('Submitted');
+
+  // removing existing results before resubmission
+  const result = document.querySelector('#result');
+  result.innerHTML = '';
 
   // fetching user input
   const firstName = document.querySelector('#firstName').value;
@@ -142,47 +148,54 @@ form.addEventListener('submit', (e) => {
     return;
   }
 
+  // clearing previous results
+  result.classList.remove('show');
+
+  // Show loading state
+  const submitButton = form.querySelector('button');
+  submitButton.disabled = true;
+  loadingContainer.style.display = 'block';
+
   // Generating result content
   // greeting the user
   const firstMessage = `Hello, ${capitalizeFirstLetter(
     firstName
   )} ${capitalizeFirstLetter(lastName)}!`;
-  console.log(firstMessage);
+  // console.log(firstMessage);
 
   // zodiac sign
   const zodiacSign = getZodiacSign(day, month);
-  console.log(zodiacSign);
+  // console.log(zodiacSign);
 
   // telling the user his/her zodiac sign
   const secondMessage = `Your Zodiac Sign is ${zodiacSign}.`;
-  console.log(secondMessage);
+  // console.log(secondMessage);
 
   // complement
   const thirdMessage = complements[day - 1];
-  console.log(thirdMessage);
+  // console.log(thirdMessage);
 
   // empathy message
   const forthMessage = empathyMessages[Math.floor(Math.random() * 20)];
-  console.log(forthMessage);
+  // console.log(forthMessage);
 
   // index for accessing recommendations array values
   let index = (firstName.length * lastName.length * year) % 30;
-  console.log(index);
+  // console.log(index);
 
   // our recommendation to the user
   const fifthMessage = recommendations[index];
-  console.log(fifthMessage);
+  // console.log(fifthMessage);
 
   // index to access predictions array values
   index = (day * month * year) % 20;
-  console.log(index);
+  // console.log(index);
 
   // user's future prediction
   const sixthMessage = predictions[index];
-  console.log(sixthMessage);
+  // console.log(sixthMessage);
 
-  const result = document.querySelector('#result');
-  console.log(result);
+  // console.log(result);
 
   // content of the result
   const resultHTML = `
@@ -193,14 +206,25 @@ form.addEventListener('submit', (e) => {
     <p>Our recommendation for you: ${fifthMessage}.</p>
     <p>Your future prediction is: ${sixthMessage}.</p>
   `;
-  console.log(resultHTML);
+  // console.log(resultHTML);
 
+  // Adding show class after a small delay for animation (i.e; 3 seconds) and setting up the content of result
   setTimeout(() => {
     result.style.display = 'block';
-    console.log(result);
+    // console.log(result);
     result.innerHTML = resultHTML;
-    console.log(result);
-  }, 2000);
+    // console.log(result);
+
+    // resetting loading state
+    // turning animation off after 3 seconds
+    loadingContainer.style.display = 'none';
+    submitButton.disabled = false;
+
+    // Show result with slight delay for smooth transition
+    requestAnimationFrame(() => {
+      result.classList.add('show');
+    });
+  }, 3000);
 });
 
 // capitalize the first letter of user's firstName and lastName
