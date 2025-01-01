@@ -207,7 +207,7 @@ button:disabled {
   top: 0;
   left: 0;
   animation-name: mercury;
-  animation-duration: 5s;
+  animation-duration: 30s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
@@ -246,7 +246,7 @@ button:disabled {
   top: 0;
   left: 0;
   animation-name: venus;
-  animation-duration: 12s;
+  animation-duration: 37s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
@@ -284,7 +284,7 @@ button:disabled {
   top: 0;
   left: 0;
   animation-name: earth;
-  animation-duration: 18s;
+  animation-duration: 48s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
@@ -322,7 +322,7 @@ button:disabled {
   top: 0;
   left: 0;
   animation-name: mars;
-  animation-duration: 25s;
+  animation-duration: 63s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
@@ -360,7 +360,7 @@ button:disabled {
   top: 0;
   left: 0;
   animation-name: jupyter;
-  animation-duration: 31s;
+  animation-duration: 75s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
@@ -397,7 +397,7 @@ button:disabled {
   top: 0;
   left: 0;
   animation-name: saturn;
-  animation-duration: 40s;
+  animation-duration: 90s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
@@ -432,3 +432,30 @@ button:disabled {
   left: 22%;
   top: 45%;
 }
+
+#star-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.star {
+  position: absolute;
+  border-radius: 50%;
+  animation: twinkle 1s infinite;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+/* and we are done  */

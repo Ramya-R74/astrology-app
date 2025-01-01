@@ -264,3 +264,70 @@ function validateDate(day, month, year) {
   const date = new Date(year, month - 1, day);
   return date.getMonth() === month - 1 && date.getDate() === parseInt(day);
 }
+
+// Twinkling Stars Animation
+
+// Selecting div#stars element
+const starContainer = document.querySelector('#star-container');
+
+// Number of Stars
+const no_of_stars = 150;
+
+// creating stars using for loop
+for (let i = 0; i < no_of_stars; i++) {
+  // creating div.star element
+  const star = document.createElement('div');
+  // class star
+  star.className = 'star';
+
+  // Problem: all stars are of same size.
+  // What we want: they should be of different sizes.
+  // We are going to randomly allocate the height and width of the star, this project is going to be my PHD on Math.random 😉
+
+  // width of div.star random allocation (1px or 2px): 3px was a bit much
+  star.style.width = `${Math.random() * 2 + 1}px`;
+  // we removed Math.floor just to make sure that every star is of different height ranging from 1.0px to 1.9999px (More Dynamic in nature)
+
+  // height of div.star equal to width
+  star.style.height = star.style.width;
+
+  // border radius to make divs round
+  // star.style.borderRadius = '50%';
+  // something's up with this property, stars are not round, so we are gonna do it with css
+
+  // setting background color of stars as white to make it more visually appealing
+  star.style.backgroundColor = 'white';
+  // well something is not working.
+  // Problem: stars are stuck with the left end of the card
+  // What we want: stars on the background spread everywhere
+  // Observation: we have not set the height and width for the div#star-container element. If we assign this star-container div it's own height and width then we can get stars everywhere on the background.
+  // Let's do that, we can use flex to position the stars,
+  // how about doing that with css? We can do that using js as well, but that feature does not change with every star, so it does not need to be dynamic
+
+  // It's still not working as expected.
+  // Problem: all stars are on one line
+  // What we want: stars spread everywhere on the background
+  // Idea: How about using the position property to set the positions of the stars dynamically?
+
+  // setting top and left property of every single star dynamically using Math.random (Thank You ChatGPT, I thought about removing the stars on the background, and forego the idea. Literally saved my day 😂)
+
+  star.style.top = `${Math.floor(Math.random() * 100)}%`;
+  // now stars are vertically on the same line, but they keep changing their position on the line dynamically (1up for me, 0 for the forego idea)
+
+  star.style.left = `${Math.floor(Math.random() * 100)}%`;
+  // Yes, we got it, stars are spread everywhere on the screen and I'm on the moon.
+
+  // Now that we have stars spread everywhere on the screen, it's time to use the css magic to make them twinkle. (keyframes)
+
+  // Problem: all stars are twinkling the same way, I mean when they are lit all are lit, when they are dim, all are dim.
+  // What we want: we want the stars do twinkle randomly not simultaneously
+  // so, we can play with the opacity property using Math.random, today, I will apply Math.random to anything and everything 😂
+
+  // Problem: opacity is not working, ChatGPT suggests that we use animation delay property (Thank You CharGPT again for saving my day)
+
+  star.style.animationDelay = Math.random() * 1 + 's';
+  // Yes, now it's working just fine.
+
+  // appending star into div#star-container
+  starContainer.append(star);
+}
