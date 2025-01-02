@@ -2,6 +2,10 @@
 
 AstroPlanet is an interactive web application that combines astrology with stunning visual elements to create an engaging user experience. The app features a dynamic solar system animation, zodiac sign calculator, and personalized astrological readings.
 
+## 🔗 Live Demo
+
+Experience the app live: [AstroPlanet Live Demo](https://gptshubham.github.io/the_astrology_app_js/)
+
 ![AstroPlanet Preview](./project_image/Astro_Planet.png)
 
 ## ✨ Features
@@ -38,21 +42,9 @@ AstroPlanet is an interactive web application that combines astrology with stunn
 - ES6+ Features
 - Mobile-First Design
 
-## 🛠️ Installation & Setup
+## 🌐 Deployment
 
-1. Clone the repository:
-
-```bash
-git clone https://github.com/gptshubham/the_astrology_app_js.git
-```
-
-2. Navigate to the project directory:
-
-```bash
-cd the_astrology_app_js
-```
-
-3. Open `index.html` in your preferred browser
+The project is deployed using GitHub Pages. You can access the live version at: [https://gptshubham.github.io/the_astrology_app_js/](https://gptshubham.github.io/the_astrology_app_js/)
 
 ## 💻 Usage
 
@@ -99,14 +91,13 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 Developed as part of the NEXUS+ Web Development course.
 
-- Developer: [Your Name]
-- Mentor: Rohit Negi
+- Developer: Shubham Kumar Gupta
 
 ## 🌟 Acknowledgments
 
 - Special thanks to Rohit Negi for mentorship and guidance
 - Inspired by modern astrological applications
-- Built with passion for web development and astrology
+- Built with passion for web development
 
 ---
 
