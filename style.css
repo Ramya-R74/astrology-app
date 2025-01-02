@@ -457,7 +457,31 @@ button:disabled {
 
 /* adding responsiveness to the application */
 
-@media (max-width: 480px) {
+@media (max-width: 1500px) {
+  .planet-container {
+    position: fixed;
+    left: 25%;
+    top: 45%;
+  }
+
+  .planet-container * {
+    scale: 0.85;
+  }
+}
+
+@media (max-width: 1200px) {
+  .planet-container {
+    position: fixed;
+    left: 25%;
+    top: 18%;
+  }
+
+  .planet-container * {
+    scale: 0.7;
+  }
+}
+
+@media (max-width: 520px) {
   .container {
     padding: 20px;
     margin: 10px;
