@@ -2,21 +2,24 @@
 
 AstroPlanet is an interactive web application that combines astrology with stunning visual elements to create an engaging user experience. The app features a dynamic solar system animation, zodiac sign calculator, and personalized astrological readings.
 
-![AstroPlanet Preview](/api/placeholder/800/400)
+![AstroPlanet Preview](./project_image/Astro_Planet.png)
 
 ## ✨ Features
 
 - **Interactive Zodiac Sign Finder**
+
   - Calculate your zodiac sign based on birth date
   - Receive personalized readings and recommendations
   - Beautiful form animations and transitions
 
 - **Dynamic Solar System**
+
   - Animated planets orbiting around the sun
   - Realistic orbital speeds and movements
   - Responsive scaling for different screen sizes
 
 - **Ambient Star Background**
+
   - Dynamic twinkling star effect
   - Randomly generated star positions
   - Smooth animation transitions
@@ -38,11 +41,13 @@ AstroPlanet is an interactive web application that combines astrology with stunn
 ## 🛠️ Installation & Setup
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/gptshubham/the_astrology_app_js.git
 ```
 
 2. Navigate to the project directory:
+
 ```bash
 cd the_astrology_app_js
 ```
@@ -59,6 +64,7 @@ cd the_astrology_app_js
 ## 📱 Responsive Design
 
 The application is fully responsive and works on:
+
 - Desktop devices
 - Tablets
 - Mobile phones
@@ -66,6 +72,7 @@ The application is fully responsive and works on:
 ## ⚙️ Technical Details
 
 ### Key JavaScript Features
+
 - Form validation with date verification
 - Dynamic content generation
 - Smooth animations and transitions
@@ -73,6 +80,7 @@ The application is fully responsive and works on:
 - Interactive UI elements
 
 ### CSS Highlights
+
 - Custom keyframe animations
 - Glassmorphism effects
 - Responsive grid layouts
@@ -101,4 +109,5 @@ Developed as part of the NEXUS+ Web Development course.
 - Built with passion for web development and astrology
 
 ---
+
 ⭐ Don't forget to star this repo if you found it helpful!
