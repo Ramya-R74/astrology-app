@@ -1,0 +1,90 @@
+version: "3.8"
+
+services:
+
+  grafana:
+    image: grafana/grafana-enterprise
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./data/grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+      - ./data/grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
+    networks:
+      - monitoring
+    restart: unless-stopped
+    depends_on:
+      - prometheus
+
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:latest
+    container_name: cadvisor
+    ports:
+      - "8080:8080"
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:rw
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+    networks:
+      - monitoring
+    restart: unless-stopped
+    depends_on:
+      - astro-app
+
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - prometheus_data:/prometheus
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    networks:
+      - monitoring
+    restart: unless-stopped
+    depends_on:
+      - cadvisor
+
+
+  astro-app:
+    build:
+      context: ./astrology-app
+      dockerfile: Dockerfile
+    container_name: astro-app
+    ports:
+      - "80:80"
+    networks:
+      - monitoring # network reference
+    volumes:
+      - data:/app/data
+
+  node-exporter:
+    image: prom/node-exporter:latest
+    container_name: node-exporter
+    restart: unless-stopped
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.rootfs=/rootfs'
+      - '--path.sysfs=/host/sys'
+      - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
+    expose:
+      - 9100
+    networks:
+      - monitoring
+
+
+volumes:
+  data:
+  prometheus_data:
+  grafana_data:
+networks: 
+  monitoring:
+    driver: bridge # Optional, defines the network type (default is bridge)
+
