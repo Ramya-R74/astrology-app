@@ -4,7 +4,7 @@ AstroPlanet is an interactive web application that combines astrology with stunn
 
 ## 🔗 Live Demo
 
-Experience the app live: [AstroPlanet Live Demo](https://gptshubham.github.io/the_astrology_app_js/)
+Experience the app live: [AstroPlanet Live Demo](https://github.com/Ramya-R74/astrology-app.git)
 
 ![AstroPlanet Preview](./project_image/Astro_Planet.png)
 
@@ -44,7 +44,7 @@ Experience the app live: [AstroPlanet Live Demo](https://gptshubham.github.io/th
 
 ## 🌐 Deployment
 
-The project is deployed using GitHub Pages. You can access the live version at: [https://gptshubham.github.io/the_astrology_app_js/](https://gptshubham.github.io/the_astrology_app_js/)
+The project is deployed using GitHub Pages. You can access the live version at: [https://gptshubham.github.io/the_astrology_app_js/](https://github.com/Ramya-R74/astrology-app.git)
 
 ## 💻 Usage
 
