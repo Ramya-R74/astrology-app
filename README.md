@@ -44,7 +44,7 @@ Experience the app live: [AstroPlanet Live Demo](https://github.com/Ramya-R74/as
 
 ## 🌐 Deployment
 
-The project is deployed using GitHub Pages. You can access the live version at: [https://gptshubham.github.io/the_astrology_app_js/](https://github.com/Ramya-R74/astrology-app.git)
+The project is deployed using GitHub Pages. You can access the live version at: [https://github.com/Ramya-R74/astrology-app.git](https://github.com/Ramya-R74/astrology-app.git)
 
 ## 💻 Usage
 
